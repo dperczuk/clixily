@@ -14,14 +14,10 @@ class QuoteCubit extends Cubit<QuoteState<QuoteModel>> {
   Future<void> loadQuote() async {
     emit(const QuoteState.inProgress());
 
-    try {
-      final Either<Failure, QuoteModel> results = await _getQuoteUseCase.execute(NoParams());
-      results.fold(
-        (Failure failure) => emit(QuoteState.failure(failure)),
-        (quote) => emit(QuoteState.loaded(quote)),
-      );
-    } catch (e) {
-      emit(QuoteState.failure(ClientFailure(e)));
-    }
+    final Either<Failure, QuoteModel> results = await _getQuoteUseCase.execute(NoParams());
+    results.fold(
+      (Failure failure) => emit(QuoteState.failure(failure)),
+      (quote) => emit(QuoteState.loaded(quote)),
+    );
   }
 }
