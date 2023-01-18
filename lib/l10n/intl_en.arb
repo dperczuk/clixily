@@ -1,1 +1,10 @@
-{}
+{
+  "@@locale": "en",
+  "appName": "Clixily App",
+  "quotePage": "Quote Page",
+  "getAnotherQuote": "Get another quote",
+  "quote": "Quote",
+  "numberOfLetters": "Number of letters",
+  "author": "Author",
+  "tags": "Tags"
+}

@@ -1,5 +1,7 @@
 import 'package:clixily/core/theme/theme.dart';
+import 'package:clixily/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'router.dart';
 
 class App extends StatelessWidget {
@@ -13,6 +15,12 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      localizationsDelegates: const [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: S.delegate.supportedLocales,
       title: appName,
       theme: getAppTheme(context),
       darkTheme: getAppTheme(context),

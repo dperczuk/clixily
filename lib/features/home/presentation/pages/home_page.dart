@@ -1,4 +1,5 @@
 import 'package:clixily/features/quotes/presentation/pages/quote_page.dart';
+import 'package:clixily/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -8,7 +9,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Clixily App'),
+        title: Text(S.of(context).appName),
       ),
       body: Container(
         color: Colors.deepPurpleAccent,
@@ -25,14 +26,17 @@ class HomePage extends StatelessWidget {
 
   Widget _buildNavigateToQuotePageButton(BuildContext context) {
     return ElevatedButton(
-      child: const Text('Quote Page'),
+      child: Text(S.of(context).quotePage),
       style: ButtonStyle(
         padding: MaterialStateProperty.all(
           const EdgeInsets.all(16),
         ),
       ),
       onPressed: () {
-        Navigator.push(context, MaterialPageRoute(builder: (_) => QuotePage()));
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => QuotePage()),
+        );
       },
     );
   }

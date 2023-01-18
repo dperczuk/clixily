@@ -4,6 +4,7 @@ import 'package:clixily/features/common/presentation/components/progress_view.da
 import 'package:clixily/features/quotes/data/models/quote_model.dart';
 import 'package:clixily/features/quotes/presentation/cubit/quote_cubit.dart';
 import 'package:clixily/features/quotes/presentation/cubit/quote_state.dart';
+import 'package:clixily/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -21,14 +22,14 @@ class QuotePage extends StatelessWidget {
   Widget _buildBody(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Quote Page'),
+          title: Text(S.of(context).quotePage),
         ),
         body: Container(
           color: Colors.white,
           child: Column(
             children: [
               SizedBox(
-                height: 250,
+                height: 200,
                 child: BlocBuilder<QuoteCubit, QuoteState<QuoteModel>>(
                   builder: (context, QuoteState<QuoteModel> state) {
                     return state.maybeWhen(
@@ -66,13 +67,13 @@ class QuotePage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          _buildQuoteInfoRow(context, 'Quote', quote.content),
+          _buildQuoteInfoRow(context, S.of(context).quote, quote.content),
           const SizedBox(height: 6),
-          _buildQuoteInfoRow(context, 'Number of letters', quote.length),
+          _buildQuoteInfoRow(context, S.of(context).numberOfLetters, quote.length),
           const SizedBox(height: 6),
-          _buildQuoteInfoRow(context, 'Author', quote.author),
+          _buildQuoteInfoRow(context, S.of(context).author, quote.author),
           const SizedBox(height: 6),
-          _buildQuoteInfoRow(context, 'Tags', quote.tags),
+          _buildQuoteInfoRow(context, S.of(context).tags, quote.tags),
         ],
       ),
     );
@@ -95,7 +96,7 @@ class QuotePage extends StatelessWidget {
   Widget _buildRefreshButton(BuildContext context) {
     return ElevatedButton(
       child: Text(
-        'Get another quote'.toUpperCase(),
+        S.of(context).getAnotherQuote.toUpperCase(),
         style: TextStyle(color: Colors.deepPurpleAccent, fontSize: 16),
       ),
       style: ButtonStyle(

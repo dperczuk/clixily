@@ -1,0 +1,10 @@
+{
+  "@@locale": "pl",
+  "appName": "Aplikacja Clixily",
+  "quotePage": "Strona z cytatami",
+  "getAnotherQuote": "Pobierz kolejny cytat",
+  "quote": "Cytat",
+  "numberOfLetters": "Ilość liter",
+  "author": "Autor",
+  "tags": "Tagi"
+}
