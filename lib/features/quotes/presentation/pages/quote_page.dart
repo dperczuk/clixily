@@ -4,6 +4,7 @@ import 'package:clixily/features/common/presentation/components/progress_view.da
 import 'package:clixily/features/quotes/data/models/quote_model.dart';
 import 'package:clixily/features/quotes/presentation/cubit/quote_cubit.dart';
 import 'package:clixily/features/quotes/presentation/cubit/quote_state.dart';
+import 'package:clixily/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -20,60 +21,43 @@ class QuotePage extends StatelessWidget {
 
   Widget _buildBody(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Quote Page'),
+      appBar: AppBar(
+        title: Text(S.of(context).quotePage),
+      ),
+      body: Container(
+        color: Colors.white,
+        child: Column(
+          children: [
+            _buildQuoteComponent(context),
+            const SizedBox(height: 8),
+            _buildGetAnotherQuoteButton(context),
+          ],
         ),
-        body: Container(
-          color: Colors.white,
-          child: Column(
-            children: [
-              SizedBox(
-                height: 250,
-                child: BlocBuilder<QuoteCubit, QuoteState<QuoteModel>>(
-                  builder: (context, QuoteState<QuoteModel> state) {
-                    return state.maybeWhen(
-                      loaded: (QuoteModel quote) {
-                        return Card(
-                          color: Colors.deepPurpleAccent,
-                          elevation: 4,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          child: _buildCardBody(context, quote),
-                        );
-                      },
-                      inProgress: () => const ProgressView(),
-                      failure: (failure) => FailureView(failure: failure),
-                      orElse: () => const SizedBox.shrink(),
-                    );
-                  },
-                ),
-              ),
-              const SizedBox(height: 8),
-              _buildRefreshButton(context),
-            ],
-          ),
-        ));
+      ),
+    );
   }
 
-  Widget _buildCardBody(
-    BuildContext context,
-    QuoteModel quote,
-  ) {
-    return Padding(
-      padding: const EdgeInsets.all(16),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          _buildQuoteInfoRow(context, 'Quote', quote.content),
-          const SizedBox(height: 6),
-          _buildQuoteInfoRow(context, 'Number of letters', quote.length),
-          const SizedBox(height: 6),
-          _buildQuoteInfoRow(context, 'Author', quote.author),
-          const SizedBox(height: 6),
-          _buildQuoteInfoRow(context, 'Tags', quote.tags),
-        ],
+  Widget _buildQuoteComponent(BuildContext context) {
+    return SizedBox(
+      height: 200,
+      child: BlocBuilder<QuoteCubit, QuoteState<QuoteModel>>(
+        builder: (context, QuoteState<QuoteModel> state) {
+          return state.maybeWhen(
+            loaded: (QuoteModel quote) {
+              return Card(
+                color: Colors.deepPurpleAccent,
+                elevation: 4,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: _buildCardBody(context, quote),
+              );
+            },
+            inProgress: () => const ProgressView(),
+            failure: (failure) => FailureView(failure: failure),
+            orElse: () => const SizedBox.shrink(),
+          );
+        },
       ),
     );
   }
@@ -92,10 +76,48 @@ class QuotePage extends StatelessWidget {
     );
   }
 
-  Widget _buildRefreshButton(BuildContext context) {
+  Widget _buildCardBody(
+    BuildContext context,
+    QuoteModel quote,
+  ) {
+    return Padding(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          _buildQuoteInfoRow(
+            context,
+            S.of(context).quote,
+            quote.content,
+          ),
+          const SizedBox(height: 6),
+          _buildQuoteInfoRow(
+            context,
+            S.of(context).numberOfLetters,
+            quote.length,
+          ),
+          const SizedBox(height: 6),
+          _buildQuoteInfoRow(
+            context,
+            S.of(context).author,
+            quote.author,
+          ),
+          const SizedBox(height: 6),
+          _buildQuoteInfoRow(
+            context,
+            S.of(context).tags,
+            quote.tags,
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildGetAnotherQuoteButton(BuildContext context) {
     return ElevatedButton(
       child: Text(
-        'Get another quote'.toUpperCase(),
+        S.of(context).getAnotherQuote.toUpperCase(),
         style: TextStyle(color: Colors.deepPurpleAccent, fontSize: 16),
       ),
       style: ButtonStyle(

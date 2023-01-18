@@ -1,5 +1,5 @@
 // DO NOT EDIT. This is code generated via package:intl/generate_localized.dart
-// This is a library that provides messages for a en locale. All the
+// This is a library that provides messages for a pl locale. All the
 // messages from the main program should be duplicated here with the same
 // function name.
 
@@ -18,18 +18,17 @@ final messages = new MessageLookup();
 typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 
 class MessageLookup extends MessageLookupByLibrary {
-  String get localeName => 'en';
+  String get localeName => 'pl';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "appName": MessageLookupByLibrary.simpleMessage("Clixily App"),
-        "author": MessageLookupByLibrary.simpleMessage("Author"),
+        "appName": MessageLookupByLibrary.simpleMessage("Aplikacja Clixily"),
+        "author": MessageLookupByLibrary.simpleMessage("Autor"),
         "getAnotherQuote":
-            MessageLookupByLibrary.simpleMessage("Get another quote"),
-        "numberOfLetters":
-            MessageLookupByLibrary.simpleMessage("Number of letters"),
-        "quote": MessageLookupByLibrary.simpleMessage("Quote"),
-        "quotePage": MessageLookupByLibrary.simpleMessage("Quote Page"),
-        "tags": MessageLookupByLibrary.simpleMessage("Tags")
+            MessageLookupByLibrary.simpleMessage("Pobierz kolejny cytat"),
+        "numberOfLetters": MessageLookupByLibrary.simpleMessage("Ilość liter"),
+        "quote": MessageLookupByLibrary.simpleMessage("Cytat"),
+        "quotePage": MessageLookupByLibrary.simpleMessage("Strona z cytatami"),
+        "tags": MessageLookupByLibrary.simpleMessage("Tagi")
       };
 }

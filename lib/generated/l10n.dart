@@ -49,6 +49,76 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+
+  /// `Clixily App`
+  String get appName {
+    return Intl.message(
+      'Clixily App',
+      name: 'appName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Quote Page`
+  String get quotePage {
+    return Intl.message(
+      'Quote Page',
+      name: 'quotePage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Get another quote`
+  String get getAnotherQuote {
+    return Intl.message(
+      'Get another quote',
+      name: 'getAnotherQuote',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Quote`
+  String get quote {
+    return Intl.message(
+      'Quote',
+      name: 'quote',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Number of letters`
+  String get numberOfLetters {
+    return Intl.message(
+      'Number of letters',
+      name: 'numberOfLetters',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Author`
+  String get author {
+    return Intl.message(
+      'Author',
+      name: 'author',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tags`
+  String get tags {
+    return Intl.message(
+      'Tags',
+      name: 'tags',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -57,6 +127,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
+      Locale.fromSubtags(languageCode: 'pl'),
     ];
   }
 
