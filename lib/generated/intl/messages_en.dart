@@ -22,12 +22,13 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "addQuote": MessageLookupByLibrary.simpleMessage("Add Quote"),
+        "allLocalQuotes": MessageLookupByLibrary.simpleMessage("All Local Quotes"),
         "appName": MessageLookupByLibrary.simpleMessage("Clixily App"),
         "author": MessageLookupByLibrary.simpleMessage("Author"),
-        "getAnotherQuote":
-            MessageLookupByLibrary.simpleMessage("Get another quote"),
-        "numberOfLetters":
-            MessageLookupByLibrary.simpleMessage("Number of letters"),
+        "getAnotherQuote": MessageLookupByLibrary.simpleMessage("Get another quote"),
+        "localQuotesNotFound": MessageLookupByLibrary.simpleMessage("Local Quotes not found"),
+        "numberOfLetters": MessageLookupByLibrary.simpleMessage("Number of letters"),
         "quote": MessageLookupByLibrary.simpleMessage("Quote"),
         "quotePage": MessageLookupByLibrary.simpleMessage("Quote Page"),
         "tags": MessageLookupByLibrary.simpleMessage("Tags")

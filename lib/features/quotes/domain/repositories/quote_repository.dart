@@ -4,4 +4,8 @@ import 'package:dartz/dartz.dart';
 
 abstract class QuoteRepository {
   Future<Either<Failure, QuoteModel>> getQuote();
+
+  Future<Either<Failure, int>> addQuote(QuoteModel quote);
+
+  Future<Either<Failure, List<QuoteModel>>> getAllLocalQuotes();
 }

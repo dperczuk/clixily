@@ -2,9 +2,12 @@
   "@@locale": "pl",
   "appName": "Aplikacja Clixily",
   "quotePage": "Strona z cytatami",
+  "addQuote": "Dodaj cytat",
   "getAnotherQuote": "Pobierz kolejny cytat",
   "quote": "Cytat",
   "numberOfLetters": "Ilość liter",
   "author": "Autor",
-  "tags": "Tagi"
+  "tags": "Tagi",
+  "allLocalQuotes": "Wszystkie Lokalne Cytaty",
+  "localQuotesNotFound": "Lokalne cytaty nie znalezione"
 }

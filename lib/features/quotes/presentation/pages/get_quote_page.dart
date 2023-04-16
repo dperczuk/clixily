@@ -2,19 +2,19 @@ import 'package:clixily/core/dependency_injection/domain/dependencies_container.
 import 'package:clixily/features/common/presentation/components/failure_view.dart';
 import 'package:clixily/features/common/presentation/components/progress_view.dart';
 import 'package:clixily/features/quotes/data/models/quote_model.dart';
-import 'package:clixily/features/quotes/presentation/cubit/quote_cubit.dart';
-import 'package:clixily/features/quotes/presentation/cubit/quote_state.dart';
+import 'package:clixily/features/quotes/presentation/cubit/single_quote_cubit.dart';
+import 'package:clixily/features/quotes/presentation/cubit/single_quote_state.dart';
 import 'package:clixily/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class QuotePage extends StatelessWidget {
-  const QuotePage({Key? key}) : super(key: key);
+class GetQuotePage extends StatelessWidget {
+  const GetQuotePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => getIt<QuoteCubit>()..loadQuote(),
+      create: (_) => getIt<SingleQuoteCubit>()..loadQuote(),
       child: Builder(builder: _buildBody),
     );
   }
@@ -40,8 +40,8 @@ class QuotePage extends StatelessWidget {
   Widget _buildQuoteComponent(BuildContext context) {
     return SizedBox(
       height: 200,
-      child: BlocBuilder<QuoteCubit, QuoteState<QuoteModel>>(
-        builder: (context, QuoteState<QuoteModel> state) {
+      child: BlocBuilder<SingleQuoteCubit, SingleQuoteState<QuoteModel>>(
+        builder: (context, SingleQuoteState<QuoteModel> state) {
           return state.maybeWhen(
             loaded: (QuoteModel quote) {
               return Card(
@@ -134,7 +134,7 @@ class QuotePage extends StatelessWidget {
           ),
         ),
       ),
-      onPressed: () => context.read<QuoteCubit>().loadQuote(),
+      onPressed: () => context.read<SingleQuoteCubit>().loadQuote(),
     );
   }
 }

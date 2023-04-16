@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'quote_state.dart';
+part of 'single_quote_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$QuoteState<QuoteModel> {
+mixin _$SingleQuoteState<QuoteModel> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
@@ -69,15 +69,16 @@ mixin _$QuoteState<QuoteModel> {
 }
 
 /// @nodoc
-abstract class $QuoteStateCopyWith<QuoteModel, $Res> {
-  factory $QuoteStateCopyWith(QuoteState<QuoteModel> value, $Res Function(QuoteState<QuoteModel>) then) =
-      _$QuoteStateCopyWithImpl<QuoteModel, $Res, QuoteState<QuoteModel>>;
+abstract class $SingleQuoteStateCopyWith<QuoteModel, $Res> {
+  factory $SingleQuoteStateCopyWith(
+          SingleQuoteState<QuoteModel> value, $Res Function(SingleQuoteState<QuoteModel>) then) =
+      _$SingleQuoteStateCopyWithImpl<QuoteModel, $Res, SingleQuoteState<QuoteModel>>;
 }
 
 /// @nodoc
-class _$QuoteStateCopyWithImpl<QuoteModel, $Res, $Val extends QuoteState<QuoteModel>>
-    implements $QuoteStateCopyWith<QuoteModel, $Res> {
-  _$QuoteStateCopyWithImpl(this._value, this._then);
+class _$SingleQuoteStateCopyWithImpl<QuoteModel, $Res, $Val extends SingleQuoteState<QuoteModel>>
+    implements $SingleQuoteStateCopyWith<QuoteModel, $Res> {
+  _$SingleQuoteStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -93,7 +94,7 @@ abstract class _$$_InitialCopyWith<QuoteModel, $Res> {
 
 /// @nodoc
 class __$$_InitialCopyWithImpl<QuoteModel, $Res>
-    extends _$QuoteStateCopyWithImpl<QuoteModel, $Res, _$_Initial<QuoteModel>>
+    extends _$SingleQuoteStateCopyWithImpl<QuoteModel, $Res, _$_Initial<QuoteModel>>
     implements _$$_InitialCopyWith<QuoteModel, $Res> {
   __$$_InitialCopyWithImpl(_$_Initial<QuoteModel> _value, $Res Function(_$_Initial<QuoteModel>) _then)
       : super(_value, _then);
@@ -106,7 +107,7 @@ class _$_Initial<QuoteModel> implements _Initial<QuoteModel> {
 
   @override
   String toString() {
-    return 'QuoteState<$QuoteModel>.initial()';
+    return 'SingleQuoteState<$QuoteModel>.initial()';
   }
 
   @override
@@ -192,7 +193,7 @@ class _$_Initial<QuoteModel> implements _Initial<QuoteModel> {
   }
 }
 
-abstract class _Initial<QuoteModel> implements QuoteState<QuoteModel> {
+abstract class _Initial<QuoteModel> implements SingleQuoteState<QuoteModel> {
   const factory _Initial() = _$_Initial<QuoteModel>;
 }
 
@@ -204,7 +205,7 @@ abstract class _$$_InProgressCopyWith<QuoteModel, $Res> {
 
 /// @nodoc
 class __$$_InProgressCopyWithImpl<QuoteModel, $Res>
-    extends _$QuoteStateCopyWithImpl<QuoteModel, $Res, _$_InProgress<QuoteModel>>
+    extends _$SingleQuoteStateCopyWithImpl<QuoteModel, $Res, _$_InProgress<QuoteModel>>
     implements _$$_InProgressCopyWith<QuoteModel, $Res> {
   __$$_InProgressCopyWithImpl(_$_InProgress<QuoteModel> _value, $Res Function(_$_InProgress<QuoteModel>) _then)
       : super(_value, _then);
@@ -217,7 +218,7 @@ class _$_InProgress<QuoteModel> implements _InProgress<QuoteModel> {
 
   @override
   String toString() {
-    return 'QuoteState<$QuoteModel>.inProgress()';
+    return 'SingleQuoteState<$QuoteModel>.inProgress()';
   }
 
   @override
@@ -303,7 +304,7 @@ class _$_InProgress<QuoteModel> implements _InProgress<QuoteModel> {
   }
 }
 
-abstract class _InProgress<QuoteModel> implements QuoteState<QuoteModel> {
+abstract class _InProgress<QuoteModel> implements SingleQuoteState<QuoteModel> {
   const factory _InProgress() = _$_InProgress<QuoteModel>;
 }
 
@@ -317,7 +318,7 @@ abstract class _$$_LoadedQuoteCopyWith<QuoteModel, $Res> {
 
 /// @nodoc
 class __$$_LoadedQuoteCopyWithImpl<QuoteModel, $Res>
-    extends _$QuoteStateCopyWithImpl<QuoteModel, $Res, _$_LoadedQuote<QuoteModel>>
+    extends _$SingleQuoteStateCopyWithImpl<QuoteModel, $Res, _$_LoadedQuote<QuoteModel>>
     implements _$$_LoadedQuoteCopyWith<QuoteModel, $Res> {
   __$$_LoadedQuoteCopyWithImpl(_$_LoadedQuote<QuoteModel> _value, $Res Function(_$_LoadedQuote<QuoteModel>) _then)
       : super(_value, _then);
@@ -346,7 +347,7 @@ class _$_LoadedQuote<QuoteModel> implements _LoadedQuote<QuoteModel> {
 
   @override
   String toString() {
-    return 'QuoteState<$QuoteModel>.loaded(quote: $quote)';
+    return 'SingleQuoteState<$QuoteModel>.loaded(quote: $quote)';
   }
 
   @override
@@ -441,7 +442,7 @@ class _$_LoadedQuote<QuoteModel> implements _LoadedQuote<QuoteModel> {
   }
 }
 
-abstract class _LoadedQuote<QuoteModel> implements QuoteState<QuoteModel> {
+abstract class _LoadedQuote<QuoteModel> implements SingleQuoteState<QuoteModel> {
   const factory _LoadedQuote(final QuoteModel quote) = _$_LoadedQuote<QuoteModel>;
 
   QuoteModel get quote;
@@ -459,7 +460,7 @@ abstract class _$$_FailureCopyWith<QuoteModel, $Res> {
 
 /// @nodoc
 class __$$_FailureCopyWithImpl<QuoteModel, $Res>
-    extends _$QuoteStateCopyWithImpl<QuoteModel, $Res, _$_Failure<QuoteModel>>
+    extends _$SingleQuoteStateCopyWithImpl<QuoteModel, $Res, _$_Failure<QuoteModel>>
     implements _$$_FailureCopyWith<QuoteModel, $Res> {
   __$$_FailureCopyWithImpl(_$_Failure<QuoteModel> _value, $Res Function(_$_Failure<QuoteModel>) _then)
       : super(_value, _then);
@@ -488,7 +489,7 @@ class _$_Failure<QuoteModel> implements _Failure<QuoteModel> {
 
   @override
   String toString() {
-    return 'QuoteState<$QuoteModel>.failure(failure: $failure)';
+    return 'SingleQuoteState<$QuoteModel>.failure(failure: $failure)';
   }
 
   @override
@@ -583,7 +584,7 @@ class _$_Failure<QuoteModel> implements _Failure<QuoteModel> {
   }
 }
 
-abstract class _Failure<QuoteModel> implements QuoteState<QuoteModel> {
+abstract class _Failure<QuoteModel> implements SingleQuoteState<QuoteModel> {
   const factory _Failure(final Failure failure) = _$_Failure<QuoteModel>;
 
   Failure get failure;
