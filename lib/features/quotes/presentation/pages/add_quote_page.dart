@@ -32,55 +32,52 @@ class _AddQuotePageState extends State<AddQuotePage> {
       appBar: AppBar(
         title: Text(S.of(context).addQuote),
       ),
-      body: Container(
-        color: Colors.white,
-        child: Column(
-          children: [
-            const SizedBox(height: 12),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Form(
-                key: _formKey,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    _buildLabel(S.of(context).quote),
-                    const SizedBox(height: 6),
-                    QuoteTextField(
-                      controller: _contentTextController,
-                      validator: (value) {
-                        if (value != null && value.isEmpty) {
-                          return S.of(context).pleaseEnterQuote;
-                        }
+      body: Column(
+        children: [
+          const SizedBox(height: 12),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Form(
+              key: _formKey,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  _buildLabel(S.of(context).quote),
+                  const SizedBox(height: 6),
+                  QuoteTextField(
+                    controller: _contentTextController,
+                    validator: (value) {
+                      if (value != null && value.isEmpty) {
+                        return S.of(context).pleaseEnterQuote;
+                      }
 
-                        return null;
-                      },
-                      maxLines: null,
-                      hintText: S.of(context).enterQuote,
-                    ),
-                    const SizedBox(height: 16),
-                    _buildLabel(S.of(context).author),
-                    const SizedBox(height: 6),
-                    QuoteTextField(
-                      controller: _authorTextController,
-                      validator: (value) {
-                        if (value != null && value.isEmpty) {
-                          return S.of(context).pleaseEnterAuthor;
-                        }
+                      return null;
+                    },
+                    maxLines: null,
+                    hintText: S.of(context).enterQuote,
+                  ),
+                  const SizedBox(height: 16),
+                  _buildLabel(S.of(context).author),
+                  const SizedBox(height: 6),
+                  QuoteTextField(
+                    controller: _authorTextController,
+                    validator: (value) {
+                      if (value != null && value.isEmpty) {
+                        return S.of(context).pleaseEnterAuthor;
+                      }
 
-                        return null;
-                      },
-                      maxLines: null,
-                      hintText: S.of(context).enterAuthor,
-                    ),
-                  ],
-                ),
+                      return null;
+                    },
+                    maxLines: null,
+                    hintText: S.of(context).enterAuthor,
+                  ),
+                ],
               ),
             ),
-            const SizedBox(height: 8),
-            _buildAddNewQuoteButton(context),
-          ],
-        ),
+          ),
+          const SizedBox(height: 8),
+          _buildAddNewQuoteButton(context),
+        ],
       ),
     );
   }

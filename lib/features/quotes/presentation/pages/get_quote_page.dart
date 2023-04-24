@@ -24,15 +24,12 @@ class GetQuotePage extends StatelessWidget {
       appBar: AppBar(
         title: Text(S.of(context).quotePage),
       ),
-      body: Container(
-        color: Colors.white,
-        child: Column(
-          children: [
-            _buildQuoteComponent(context),
-            const SizedBox(height: 8),
-            _buildGetAnotherQuoteButton(context),
-          ],
-        ),
+      body: Column(
+        children: [
+          _buildQuoteComponent(context),
+          const SizedBox(height: 8),
+          _buildGetAnotherQuoteButton(context),
+        ],
       ),
     );
   }

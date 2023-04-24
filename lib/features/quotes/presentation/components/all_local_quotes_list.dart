@@ -18,55 +18,52 @@ class AllLocalQuotesList extends StatelessWidget {
   }
 
   Widget _buildAllLocalQuotesList(BuildContext context) {
-    return SizedBox(
-      height: 200,
-      child: BlocBuilder<AllLocalQuotesCubit, AllLocalQuotesState>(
-        builder: (context, AllLocalQuotesState state) {
-          return state.maybeWhen(
-            loaded: (List<QuoteModel> quotes) {
-              if (quotes.isNotEmpty) {
-                return ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: quotes.length,
-                  padding: const EdgeInsets.all(12),
-                  itemBuilder: (BuildContext context, int index) {
-                    return SwipeableTile.card(
-                      color: Colors.deepPurpleAccent,
-                      shadow: BoxShadow(
-                        color: Colors.black.withOpacity(0.35),
-                        blurRadius: 4,
-                        offset: const Offset(2, 2),
-                      ),
-                      horizontalPadding: 16,
-                      verticalPadding: 8,
-                      direction: SwipeDirection.horizontal,
-                      onSwiped: (_) => context.read<RemoveQuoteCubit>().removeQuote(quotes[index].id!),
-                      backgroundBuilder: (_, SwipeDirection direction, AnimationController progress) {
-                        return AnimatedBuilder(
-                          animation: progress,
-                          builder: (_, __) {
-                            return AnimatedContainer(
-                              duration: const Duration(milliseconds: 400),
-                              color: progress.value > 0.4 ? const Color(0xFFed7474) : const Color(0xFFeded98),
-                            );
-                          },
-                        );
-                      },
-                      key: UniqueKey(),
-                      child: _buildCardBody(context, quotes[index]),
-                    );
-                  },
-                );
-              }
+    return BlocBuilder<AllLocalQuotesCubit, AllLocalQuotesState>(
+      builder: (context, AllLocalQuotesState state) {
+        return state.maybeWhen(
+          loaded: (List<QuoteModel> quotes) {
+            if (quotes.isNotEmpty) {
+              return ListView.builder(
+                shrinkWrap: true,
+                itemCount: quotes.length,
+                padding: const EdgeInsets.all(12),
+                itemBuilder: (BuildContext context, int index) {
+                  return SwipeableTile.card(
+                    color: Colors.deepPurpleAccent,
+                    shadow: BoxShadow(
+                      color: Colors.black.withOpacity(0.35),
+                      blurRadius: 4,
+                      offset: const Offset(2, 2),
+                    ),
+                    horizontalPadding: 16,
+                    verticalPadding: 8,
+                    direction: SwipeDirection.horizontal,
+                    onSwiped: (_) => context.read<RemoveQuoteCubit>().removeQuote(quotes[index].id!),
+                    backgroundBuilder: (_, SwipeDirection direction, AnimationController progress) {
+                      return AnimatedBuilder(
+                        animation: progress,
+                        builder: (_, __) {
+                          return AnimatedContainer(
+                            duration: const Duration(milliseconds: 400),
+                            color: progress.value > 0.4 ? const Color(0xFFed7474) : const Color(0xFFeded98),
+                          );
+                        },
+                      );
+                    },
+                    key: UniqueKey(),
+                    child: _buildCardBody(context, quotes[index]),
+                  );
+                },
+              );
+            }
 
-              return Center(child: Text(S.of(context).localQuotesNotFound));
-            },
-            inProgress: () => const ProgressView(),
-            failure: (failure) => FailureView(failure: failure),
-            orElse: () => const SizedBox.shrink(),
-          );
-        },
-      ),
+            return Center(child: Text(S.of(context).localQuotesNotFound));
+          },
+          inProgress: () => const ProgressView(),
+          failure: (failure) => FailureView(failure: failure),
+          orElse: () => const SizedBox.shrink(),
+        );
+      },
     );
   }
 

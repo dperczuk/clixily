@@ -12,18 +12,16 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text(S.of(context).appName),
       ),
-      body: Container(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              const SizedBox(height: 16),
-              _buildNavigateToGetQuotePageButton(context),
-              const SizedBox(height: 16),
-              _buildNavigateToAllLocalQuotesPageButton(context),
-            ],
-          ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 8),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            const SizedBox(height: 16),
+            _buildNavigateToGetQuotePageButton(context),
+            const SizedBox(height: 16),
+            _buildNavigateToAllLocalQuotesPageButton(context),
+          ],
         ),
       ),
     );

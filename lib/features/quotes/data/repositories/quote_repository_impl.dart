@@ -9,7 +9,10 @@ import 'package:drift/drift.dart';
 import 'package:flutter/cupertino.dart';
 
 class QuoteRepositoryImpl extends QuoteRepository {
-  QuoteRepositoryImpl(this._apiClient, this._quotesDatabase);
+  QuoteRepositoryImpl(
+    this._apiClient,
+    this._quotesDatabase,
+  );
 
   final ApiClient _apiClient;
   final QuotesDatabase _quotesDatabase;

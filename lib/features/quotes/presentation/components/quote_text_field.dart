@@ -34,7 +34,7 @@ class QuoteTextField extends StatelessWidget {
           borderRadius: const BorderRadius.all(Radius.circular(16)),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: Colors.deepPurpleAccent, width: 2.0),
+          borderSide: const BorderSide(color: Colors.deepPurpleAccent, width: 2),
           borderRadius: BorderRadius.circular(16),
         ),
       ),
