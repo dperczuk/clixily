@@ -1,4 +1,5 @@
 import 'package:clixily/core/dependency_injection/domain/dependencies_container.dart';
+import 'package:clixily/features/quotes/presentation/components/quote_text_field.dart';
 import 'package:clixily/features/quotes/presentation/cubit/add_quote_cubit.dart';
 import 'package:clixily/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -45,17 +46,31 @@ class _AddQuotePageState extends State<AddQuotePage> {
                   children: <Widget>[
                     _buildLabel(S.of(context).quote),
                     const SizedBox(height: 6),
-                    _buildTextFormField(
+                    QuoteTextField(
                       controller: _contentTextController,
-                      validationTextMessage: S.of(context).pleaseEnterQuote,
+                      validator: (value) {
+                        if (value != null && value.isEmpty) {
+                          return S.of(context).pleaseEnterQuote;
+                        }
+
+                        return null;
+                      },
+                      maxLines: null,
                       hintText: S.of(context).enterQuote,
                     ),
                     const SizedBox(height: 16),
                     _buildLabel(S.of(context).author),
                     const SizedBox(height: 6),
-                    _buildTextFormField(
+                    QuoteTextField(
                       controller: _authorTextController,
-                      validationTextMessage: S.of(context).pleaseEnterAuthor,
+                      validator: (value) {
+                        if (value != null && value.isEmpty) {
+                          return S.of(context).pleaseEnterAuthor;
+                        }
+
+                        return null;
+                      },
+                      maxLines: null,
                       hintText: S.of(context).enterAuthor,
                     ),
                   ],
@@ -76,34 +91,6 @@ class _AddQuotePageState extends State<AddQuotePage> {
       style: const TextStyle(
         color: Colors.deepPurpleAccent,
         fontWeight: FontWeight.bold,
-      ),
-    );
-  }
-
-  Widget _buildTextFormField({
-    required TextEditingController controller,
-    required String validationTextMessage,
-    required String hintText,
-  }) {
-    return TextFormField(
-      controller: controller,
-      validator: (value) {
-        if (value != null && value.isEmpty) {
-          return validationTextMessage;
-        }
-        return null;
-      },
-      autocorrect: false,
-      maxLines: null,
-      decoration: InputDecoration(
-        hintText: hintText,
-        border: OutlineInputBorder(
-          borderRadius: const BorderRadius.all(Radius.circular(16)),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: Colors.deepPurpleAccent, width: 2.0),
-          borderRadius: BorderRadius.circular(16),
-        ),
       ),
     );
   }
