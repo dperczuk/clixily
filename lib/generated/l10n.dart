@@ -78,6 +78,26 @@ class S {
     );
   }
 
+  /// `Enter Quote`
+  String get enterQuote {
+    return Intl.message(
+      'Enter Quote',
+      name: 'enterQuote',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter author`
+  String get enterAuthor {
+    return Intl.message(
+      'Enter author',
+      name: 'enterAuthor',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Get another quote`
   String get getAnotherQuote {
     return Intl.message(

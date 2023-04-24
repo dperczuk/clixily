@@ -15,8 +15,8 @@ class AllLocalQuotesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (_) => getIt<AllLocalQuotesCubit>()..loadAllLocalQuotes()),
-        BlocProvider(create: (_) => getIt<RemoveQuoteCubit>()),
+        BlocProvider.value(value: getIt<AllLocalQuotesCubit>()..loadAllLocalQuotes()),
+        BlocProvider.value(value: getIt<RemoveQuoteCubit>()),
       ],
       child: Builder(builder: _buildBody),
     );

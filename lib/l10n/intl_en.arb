@@ -3,6 +3,8 @@
   "appName": "Clixily App",
   "quotePage": "Quote Page",
   "addQuote": "Add Quote",
+  "enterQuote": "Enter Quote",
+  "enterAuthor": "Enter author",
   "getAnotherQuote": "Get another quote",
   "quote": "Quote",
   "numberOfLetters": "Number of letters",

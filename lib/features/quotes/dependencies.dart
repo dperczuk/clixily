@@ -21,8 +21,8 @@ Future<void> setupDependencies(GetIt getIt) async {
     ..registerFactory(() => GetAllLocalQuotesUseCase(getIt()))
     ..registerFactory(() => AddQuoteUseCase(getIt()))
     ..registerFactory(() => RemoveQuoteUseCase(getIt()))
-    ..registerFactory(() => SingleQuoteCubit(getIt()))
-    ..registerFactory(() => AllLocalQuotesCubit(getIt()))
-    ..registerFactory(() => RemoveQuoteCubit(getIt()))
-    ..registerFactory(() => AddQuoteCubit(getIt()));
+    ..registerLazySingleton(() => SingleQuoteCubit(getIt()))
+    ..registerLazySingleton(() => AllLocalQuotesCubit(getIt()))
+    ..registerLazySingleton(() => RemoveQuoteCubit(getIt()))
+    ..registerLazySingleton(() => AddQuoteCubit(getIt()));
 }

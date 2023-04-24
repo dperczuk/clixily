@@ -26,6 +26,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "allLocalQuotes": MessageLookupByLibrary.simpleMessage("All Local Quotes"),
         "appName": MessageLookupByLibrary.simpleMessage("Clixily App"),
         "author": MessageLookupByLibrary.simpleMessage("Author"),
+        "enterAuthor": MessageLookupByLibrary.simpleMessage("Enter author"),
+        "enterQuote": MessageLookupByLibrary.simpleMessage("Enter Quote"),
         "getAnotherQuote": MessageLookupByLibrary.simpleMessage("Get another quote"),
         "localQuotesNotFound": MessageLookupByLibrary.simpleMessage("Local Quotes not found"),
         "numberOfLetters": MessageLookupByLibrary.simpleMessage("Number of letters"),

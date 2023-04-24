@@ -20,8 +20,8 @@ class _AddQuotePageState extends State<AddQuotePage> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => getIt<AddQuoteCubit>(),
+    return BlocProvider.value(
+      value: getIt<AddQuoteCubit>(),
       child: Builder(builder: _buildBody),
     );
   }
@@ -45,46 +45,18 @@ class _AddQuotePageState extends State<AddQuotePage> {
                   children: <Widget>[
                     _buildLabel(S.of(context).quote),
                     const SizedBox(height: 6),
-                    TextFormField(
+                    _buildTextFormField(
                       controller: _contentTextController,
-                      validator: (value) {
-                        if (value != null && value.isEmpty) {
-                          return S.of(context).pleaseEnterQuote;
-                        }
-                        return null;
-                      },
-                      autocorrect: false,
-                      maxLines: null,
-                      decoration: InputDecoration(
-                        hintText: 'Enter quote',
-                        border: OutlineInputBorder(
-                          borderRadius: const BorderRadius.all(Radius.circular(16)),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(color: Colors.deepPurpleAccent, width: 2.0),
-                          borderRadius: BorderRadius.circular(16),
-                        ),
-                      ),
+                      validationTextMessage: S.of(context).pleaseEnterQuote,
+                      hintText: S.of(context).enterQuote,
                     ),
                     const SizedBox(height: 16),
                     _buildLabel(S.of(context).author),
                     const SizedBox(height: 6),
-                    TextFormField(
+                    _buildTextFormField(
                       controller: _authorTextController,
-                      validator: (value) {
-                        if (value != null && value.isEmpty) {
-                          return S.of(context).pleaseEnterAuthor;
-                        }
-                        return null;
-                      },
-                      autocorrect: false,
-                      maxLines: null,
-                      decoration: InputDecoration(
-                        hintText: 'Enter author',
-                        border: OutlineInputBorder(
-                          borderRadius: const BorderRadius.all(Radius.circular(16)),
-                        ),
-                      ),
+                      validationTextMessage: S.of(context).pleaseEnterAuthor,
+                      hintText: S.of(context).enterAuthor,
                     ),
                   ],
                 ),
@@ -108,6 +80,34 @@ class _AddQuotePageState extends State<AddQuotePage> {
     );
   }
 
+  Widget _buildTextFormField({
+    required TextEditingController controller,
+    required String validationTextMessage,
+    required String hintText,
+  }) {
+    return TextFormField(
+      controller: controller,
+      validator: (value) {
+        if (value != null && value.isEmpty) {
+          return validationTextMessage;
+        }
+        return null;
+      },
+      autocorrect: false,
+      maxLines: null,
+      decoration: InputDecoration(
+        hintText: hintText,
+        border: OutlineInputBorder(
+          borderRadius: const BorderRadius.all(Radius.circular(16)),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: const BorderSide(color: Colors.deepPurpleAccent, width: 2.0),
+          borderRadius: BorderRadius.circular(16),
+        ),
+      ),
+    );
+  }
+
   Widget _buildAddNewQuoteButton(BuildContext context) {
     return ElevatedButton(
       child: Text(
@@ -118,9 +118,7 @@ class _AddQuotePageState extends State<AddQuotePage> {
         padding: MaterialStateProperty.all(
           const EdgeInsets.all(16),
         ),
-        backgroundColor: MaterialStateProperty.all<Color>(
-          Colors.white,
-        ),
+        backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(22),

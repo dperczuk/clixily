@@ -13,8 +13,8 @@ class GetQuotePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => getIt<SingleQuoteCubit>()..loadQuote(),
+    return BlocProvider.value(
+      value: getIt<SingleQuoteCubit>()..loadQuote(),
       child: Builder(builder: _buildBody),
     );
   }

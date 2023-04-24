@@ -3,6 +3,8 @@
   "appName": "Aplikacja Clixily",
   "quotePage": "Strona z cytatami",
   "addQuote": "Dodaj cytat",
+  "enterQuote": "Wprowadź cytat",
+  "enterAuthor": "Wprowadź autora",
   "getAnotherQuote": "Pobierz kolejny cytat",
   "quote": "Cytat",
   "numberOfLetters": "Ilość liter",

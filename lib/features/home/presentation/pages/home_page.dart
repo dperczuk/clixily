@@ -1,4 +1,3 @@
-import 'package:clixily/features/quotes/presentation/pages/add_quote_page.dart';
 import 'package:clixily/features/quotes/presentation/pages/all_local_quotes_page.dart';
 import 'package:clixily/features/quotes/presentation/pages/get_quote_page.dart';
 import 'package:clixily/generated/l10n.dart';
@@ -34,12 +33,7 @@ class HomePage extends StatelessWidget {
     return ElevatedButton(
       child: Text(S.of(context).quotePage),
       style: _buttonStyle,
-      onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (_) => GetQuotePage()),
-        );
-      },
+      onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => GetQuotePage())),
     );
   }
 
@@ -47,12 +41,7 @@ class HomePage extends StatelessWidget {
     return ElevatedButton(
       child: Text(S.of(context).allLocalQuotes),
       style: _buttonStyle,
-      onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (_) => AllLocalQuotesPage()),
-        );
-      },
+      onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => AllLocalQuotesPage())),
     );
   }
 
