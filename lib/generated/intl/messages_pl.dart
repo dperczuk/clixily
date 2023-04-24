@@ -29,6 +29,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "getAnotherQuote": MessageLookupByLibrary.simpleMessage("Pobierz kolejny cytat"),
         "localQuotesNotFound": MessageLookupByLibrary.simpleMessage("Lokalne cytaty nie znalezione"),
         "numberOfLetters": MessageLookupByLibrary.simpleMessage("Ilość liter"),
+        "pleaseEnterAuthor": MessageLookupByLibrary.simpleMessage("Proszę wprowadzić autora"),
+        "pleaseEnterQuote": MessageLookupByLibrary.simpleMessage("Proszę wprowadzić cytat"),
         "quote": MessageLookupByLibrary.simpleMessage("Cytat"),
         "quotePage": MessageLookupByLibrary.simpleMessage("Strona z cytatami"),
         "tags": MessageLookupByLibrary.simpleMessage("Tagi")

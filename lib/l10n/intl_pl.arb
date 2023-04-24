@@ -9,5 +9,7 @@
   "author": "Autor",
   "tags": "Tagi",
   "allLocalQuotes": "Wszystkie Lokalne Cytaty",
-  "localQuotesNotFound": "Lokalne cytaty nie znalezione"
+  "localQuotesNotFound": "Lokalne cytaty nie znalezione",
+  "pleaseEnterQuote": "Proszę wprowadzić cytat",
+  "pleaseEnterAuthor": "Proszę wprowadzić autora"
 }

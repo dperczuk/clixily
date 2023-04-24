@@ -147,6 +147,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Please enter the quote`
+  String get pleaseEnterQuote {
+    return Intl.message(
+      'Please enter the quote',
+      name: 'pleaseEnterQuote',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter the author`
+  String get pleaseEnterAuthor {
+    return Intl.message(
+      'Please enter the author',
+      name: 'pleaseEnterAuthor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter length`
+  String get pleaseEnterLength {
+    return Intl.message(
+      'Please enter length',
+      name: 'pleaseEnterLength',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

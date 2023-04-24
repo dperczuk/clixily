@@ -4,8 +4,18 @@ import 'package:clixily/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class AddQuotePage extends StatelessWidget {
+final GlobalKey<FormState> _formKey = GlobalKey();
+
+class AddQuotePage extends StatefulWidget {
   const AddQuotePage({Key? key}) : super(key: key);
+
+  @override
+  State<AddQuotePage> createState() => _AddQuotePageState();
+}
+
+class _AddQuotePageState extends State<AddQuotePage> {
+  final TextEditingController _contentTextController = TextEditingController(text: '');
+  final TextEditingController _authorTextController = TextEditingController(text: '');
 
   @override
   Widget build(BuildContext context) {
@@ -24,11 +34,75 @@ class AddQuotePage extends StatelessWidget {
         color: Colors.white,
         child: Column(
           children: [
-            // _buildQuoteComponent(context),
+            const SizedBox(height: 12),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    _buildLabel(S.of(context).quote),
+                    const SizedBox(height: 6),
+                    TextFormField(
+                      controller: _contentTextController,
+                      validator: (value) {
+                        if (value != null && value.isEmpty) {
+                          return S.of(context).pleaseEnterQuote;
+                        }
+                        return null;
+                      },
+                      autocorrect: false,
+                      maxLines: null,
+                      decoration: InputDecoration(
+                        hintText: 'Enter quote',
+                        border: OutlineInputBorder(
+                          borderRadius: const BorderRadius.all(Radius.circular(16)),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(color: Colors.deepPurpleAccent, width: 2.0),
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+                    _buildLabel(S.of(context).author),
+                    const SizedBox(height: 6),
+                    TextFormField(
+                      controller: _authorTextController,
+                      validator: (value) {
+                        if (value != null && value.isEmpty) {
+                          return S.of(context).pleaseEnterAuthor;
+                        }
+                        return null;
+                      },
+                      autocorrect: false,
+                      maxLines: null,
+                      decoration: InputDecoration(
+                        hintText: 'Enter author',
+                        border: OutlineInputBorder(
+                          borderRadius: const BorderRadius.all(Radius.circular(16)),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
             const SizedBox(height: 8),
             _buildAddNewQuoteButton(context),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _buildLabel(String title) {
+    return Text(
+      title,
+      style: const TextStyle(
+        color: Colors.deepPurpleAccent,
+        fontWeight: FontWeight.bold,
       ),
     );
   }
@@ -53,7 +127,17 @@ class AddQuotePage extends StatelessWidget {
           ),
         ),
       ),
-      onPressed: () => context.read<AddQuoteCubit>().addQuote('123123', 'aaaaaaaaaa', 'Aaaaa Bbbbb', 15),
+      onPressed: () async {
+        if (_formKey.currentState != null && _formKey.currentState!.validate()) {
+          await context.read<AddQuoteCubit>().addQuote(
+                _contentTextController.text,
+                _authorTextController.text,
+                _contentTextController.text.length,
+              );
+
+          Navigator.pop(context);
+        }
+      },
     );
   }
 }

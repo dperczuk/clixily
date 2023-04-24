@@ -8,7 +8,6 @@ class AddQuoteCubit extends Cubit<AddQuoteState> {
   final AddQuoteUseCase _addQuoteUseCase;
 
   Future<void> addQuote(
-    String quoteId,
     String content,
     String author,
     num length,

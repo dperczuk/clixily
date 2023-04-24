@@ -1,9 +1,11 @@
 import 'package:clixily/core/dependency_injection/domain/dependencies_container.dart';
+import 'package:clixily/features/common/presentation/components/fab.dart';
 import 'package:clixily/features/common/presentation/components/failure_view.dart';
 import 'package:clixily/features/common/presentation/components/progress_view.dart';
 import 'package:clixily/features/quotes/data/models/quote_model.dart';
 import 'package:clixily/features/quotes/presentation/cubit/all_local_quotes_cubit.dart';
 import 'package:clixily/features/quotes/presentation/cubit/all_local_quotes_state.dart';
+import 'package:clixily/features/quotes/presentation/pages/add_quote_page.dart';
 import 'package:clixily/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -21,6 +23,14 @@ class AllLocalQuotesPage extends StatelessWidget {
 
   Widget _buildBody(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FabComponent(
+        callback: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => AddQuotePage()),
+          );
+        },
+      ),
       appBar: AppBar(
         title: Text(S.of(context).allLocalQuotes),
       ),

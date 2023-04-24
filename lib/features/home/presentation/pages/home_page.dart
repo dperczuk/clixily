@@ -14,17 +14,17 @@ class HomePage extends StatelessWidget {
         title: Text(S.of(context).appName),
       ),
       body: Container(
-        color: Colors.deepPurpleAccent,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            const SizedBox(height: 16),
-            _buildNavigateToGetQuotePageButton(context),
-            const SizedBox(height: 16),
-            _buildNavigateToAllLocalQuotesPageButton(context),
-            const SizedBox(height: 16),
-            _buildNavigateToAddQuotePageButton(context),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              const SizedBox(height: 16),
+              _buildNavigateToGetQuotePageButton(context),
+              const SizedBox(height: 16),
+              _buildNavigateToAllLocalQuotesPageButton(context),
+            ],
+          ),
         ),
       ),
     );
@@ -33,11 +33,7 @@ class HomePage extends StatelessWidget {
   Widget _buildNavigateToGetQuotePageButton(BuildContext context) {
     return ElevatedButton(
       child: Text(S.of(context).quotePage),
-      style: ButtonStyle(
-        padding: MaterialStateProperty.all(
-          const EdgeInsets.all(16),
-        ),
-      ),
+      style: _buttonStyle,
       onPressed: () {
         Navigator.push(
           context,
@@ -50,11 +46,7 @@ class HomePage extends StatelessWidget {
   Widget _buildNavigateToAllLocalQuotesPageButton(BuildContext context) {
     return ElevatedButton(
       child: Text(S.of(context).allLocalQuotes),
-      style: ButtonStyle(
-        padding: MaterialStateProperty.all(
-          const EdgeInsets.all(16),
-        ),
-      ),
+      style: _buttonStyle,
       onPressed: () {
         Navigator.push(
           context,
@@ -64,20 +56,10 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _buildNavigateToAddQuotePageButton(BuildContext context) {
-    return ElevatedButton(
-      child: Text(S.of(context).addQuote),
-      style: ButtonStyle(
-        padding: MaterialStateProperty.all(
-          const EdgeInsets.all(16),
-        ),
-      ),
-      onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (_) => AddQuotePage()),
-        );
-      },
+  ButtonStyle get _buttonStyle {
+    return ElevatedButton.styleFrom(
+      padding: const EdgeInsets.all(16),
+      backgroundColor: Colors.deepPurpleAccent,
     );
   }
 }

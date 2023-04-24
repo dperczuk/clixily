@@ -9,5 +9,8 @@
   "author": "Author",
   "tags": "Tags",
   "allLocalQuotes": "All Local Quotes",
-  "localQuotesNotFound": "Local Quotes not found"
+  "localQuotesNotFound": "Local Quotes not found",
+  "pleaseEnterQuote": "Please enter the quote",
+  "pleaseEnterAuthor": "Please enter the author",
+  "pleaseEnterLength": "Please enter length"
 }
