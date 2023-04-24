@@ -108,12 +108,6 @@ class AllLocalQuotesList extends StatelessWidget {
             S.of(context).author,
             quote.author,
           ),
-          const SizedBox(height: 6),
-          _buildQuoteInfoRow(
-            context,
-            S.of(context).tags,
-            quote.tags,
-          ),
         ],
       ),
     );
