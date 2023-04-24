@@ -7,7 +7,7 @@ part of 'quote_model.dart';
 // **************************************************************************
 
 QuoteModel _$QuoteModelFromJson(Map<String, dynamic> json) => QuoteModel(
-      id: json['id'] as String,
+      id: json['id'] as String?,
       content: json['content'] as String?,
       author: json['author'] as String?,
       length: json['length'] as num?,

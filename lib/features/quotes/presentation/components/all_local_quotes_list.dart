@@ -40,7 +40,7 @@ class AllLocalQuotesList extends StatelessWidget {
                       horizontalPadding: 16,
                       verticalPadding: 8,
                       direction: SwipeDirection.horizontal,
-                      onSwiped: (_) => context.read<RemoveQuoteCubit>().removeQuote(quotes[index].id),
+                      onSwiped: (_) => context.read<RemoveQuoteCubit>().removeQuote(quotes[index].id!),
                       backgroundBuilder: (_, SwipeDirection direction, AnimationController progress) {
                         return AnimatedBuilder(
                           animation: progress,

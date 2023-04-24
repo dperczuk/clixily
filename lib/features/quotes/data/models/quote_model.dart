@@ -15,7 +15,7 @@ class QuoteModel {
 
   factory QuoteModel.fromJson(Map<String, dynamic> json) => _$QuoteModelFromJson(json);
 
-  final String id;
+  final String? id;
   final String? content;
   final String? author;
   final num? length;
@@ -23,7 +23,7 @@ class QuoteModel {
 
   factory QuoteModel.fromDbModel(Quote quote) {
     return QuoteModel(
-      id: quote.id!,
+      id: quote.id,
       content: quote.content,
       author: quote.author,
       length: quote.length,
