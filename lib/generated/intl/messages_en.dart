@@ -29,6 +29,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "enterAuthor": MessageLookupByLibrary.simpleMessage("Enter author"),
         "enterQuote": MessageLookupByLibrary.simpleMessage("Enter Quote"),
         "getAnotherQuote": MessageLookupByLibrary.simpleMessage("Get another quote"),
+        "getQuote": MessageLookupByLibrary.simpleMessage("Get quote"),
         "localQuotesNotFound": MessageLookupByLibrary.simpleMessage("Local Quotes not found"),
         "numberOfLetters": MessageLookupByLibrary.simpleMessage("Number of letters"),
         "pleaseEnterAuthor": MessageLookupByLibrary.simpleMessage("Please enter the author"),
@@ -36,6 +37,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "pleaseEnterQuote": MessageLookupByLibrary.simpleMessage("Please enter the quote"),
         "quote": MessageLookupByLibrary.simpleMessage("Quote"),
         "quotePage": MessageLookupByLibrary.simpleMessage("Quote Page"),
+        "quotesList": MessageLookupByLibrary.simpleMessage("Quotes List"),
         "tags": MessageLookupByLibrary.simpleMessage("Tags")
       };
 }

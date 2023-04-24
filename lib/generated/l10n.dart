@@ -108,6 +108,26 @@ class S {
     );
   }
 
+  /// `Get quote`
+  String get getQuote {
+    return Intl.message(
+      'Get quote',
+      name: 'getQuote',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Quotes List`
+  String get quotesList {
+    return Intl.message(
+      'Quotes List',
+      name: 'quotesList',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Quote`
   String get quote {
     return Intl.message(
