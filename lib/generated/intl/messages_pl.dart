@@ -29,12 +29,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "enterAuthor": MessageLookupByLibrary.simpleMessage("Wprowadź autora"),
         "enterQuote": MessageLookupByLibrary.simpleMessage("Wprowadź cytat"),
         "getAnotherQuote": MessageLookupByLibrary.simpleMessage("Pobierz kolejny cytat"),
+        "getQuote": MessageLookupByLibrary.simpleMessage("Pobierz Cytat"),
         "localQuotesNotFound": MessageLookupByLibrary.simpleMessage("Lokalne cytaty nie znalezione"),
         "numberOfLetters": MessageLookupByLibrary.simpleMessage("Ilość liter"),
         "pleaseEnterAuthor": MessageLookupByLibrary.simpleMessage("Proszę wprowadzić autora"),
         "pleaseEnterQuote": MessageLookupByLibrary.simpleMessage("Proszę wprowadzić cytat"),
         "quote": MessageLookupByLibrary.simpleMessage("Cytat"),
         "quotePage": MessageLookupByLibrary.simpleMessage("Strona z cytatami"),
+        "quotesList": MessageLookupByLibrary.simpleMessage("Lista Cytatów"),
         "tags": MessageLookupByLibrary.simpleMessage("Tagi")
       };
 }

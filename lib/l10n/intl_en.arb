@@ -6,6 +6,8 @@
   "enterQuote": "Enter Quote",
   "enterAuthor": "Enter author",
   "getAnotherQuote": "Get another quote",
+  "getQuote": "Get quote",
+  "quotesList": "Quotes List",
   "quote": "Quote",
   "numberOfLetters": "Number of letters",
   "author": "Author",

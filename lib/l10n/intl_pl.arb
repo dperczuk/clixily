@@ -6,6 +6,8 @@
   "enterQuote": "Wprowadź cytat",
   "enterAuthor": "Wprowadź autora",
   "getAnotherQuote": "Pobierz kolejny cytat",
+  "getQuote": "Pobierz Cytat",
+  "quotesList": "Lista Cytatów",
   "quote": "Cytat",
   "numberOfLetters": "Ilość liter",
   "author": "Autor",
