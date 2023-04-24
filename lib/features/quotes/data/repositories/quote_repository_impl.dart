@@ -7,7 +7,6 @@ import 'package:clixily/features/quotes/domain/repositories/quote_repository.dar
 import 'package:dartz/dartz.dart';
 import 'package:drift/drift.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:uuid/uuid.dart';
 
 class QuoteRepositoryImpl extends QuoteRepository {
   QuoteRepositoryImpl(this._apiClient, this._quotesDatabase);
@@ -44,7 +43,7 @@ class QuoteRepositoryImpl extends QuoteRepository {
       return _quotesDatabase
           .insertQuote(
             QuoteTableCompanion(
-              id: Value(const Uuid().v4()),
+              id: Value(quote.id),
               content: Value(quote.content),
               author: Value(quote.author),
               length: Value(int.parse('${quote.length}')),
@@ -53,6 +52,16 @@ class QuoteRepositoryImpl extends QuoteRepository {
           .then(Right.new);
     } catch (e, stack) {
       debugPrintStack(stackTrace: stack, label: 'QuoteRepositoryImpl.addQuote');
+      return Left(ClientFailure(e));
+    }
+  }
+
+  @override
+  Future<Either<Failure, void>> removeQuote(String quoteId) async {
+    try {
+      return Right(await _quotesDatabase.removeQuote(quoteId));
+    } catch (e, stackTrace) {
+      debugPrintStack(stackTrace: stackTrace, label: 'QuoteRepositoryImpl.removeQuote');
       return Left(ClientFailure(e));
     }
   }

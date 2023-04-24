@@ -8,7 +8,6 @@ import 'package:flutter/foundation.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqlite3_flutter_libs/sqlite3_flutter_libs.dart';
 import 'package:path/path.dart' as path;
-import 'package:uuid/uuid.dart';
 
 part 'clixily_database.g.dart';
 
@@ -48,12 +47,14 @@ class ClixilyDatabase extends _$ClixilyDatabase implements QuotesDatabase {
     );
   }
 
+  Future<void> removeQuote(String quoteId) => (delete(quoteTable)..where((it) => it.id.equals(quoteId))).go();
+
   @override
   Future<void> removeAllQuotes() => delete(quoteTable).go();
 
   QuoteTableCompanion _mapQuoteToInsertCompanion(QuoteTableCompanion quote) {
     return QuoteTableCompanion.insert(
-      id: const Uuid().v4(),
+      id: quote.id!,
       content: quote.content,
       author: quote.author,
       length: quote.length,

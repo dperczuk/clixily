@@ -9,12 +9,14 @@ class AddQuoteUseCase {
   final QuoteRepository _quoteRepository;
 
   Future<Either<Failure, void>> execute({
+    required String id,
     required String content,
     required String author,
     required num length,
   }) async {
     final result = await _quoteRepository.addQuote(
       QuoteModel(
+        id: id,
         content: content,
         author: author,
         length: length,

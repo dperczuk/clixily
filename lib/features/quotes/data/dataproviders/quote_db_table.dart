@@ -2,7 +2,7 @@ import 'package:drift/drift.dart';
 
 @DataClassName('Quote')
 class QuoteTable extends Table {
-  TextColumn get id => text()();
+  TextColumn get id => text().nullable()();
 
   TextColumn get content => text().nullable()();
 

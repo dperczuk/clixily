@@ -8,4 +8,6 @@ abstract class QuoteRepository {
   Future<Either<Failure, int>> addQuote(QuoteModel quote);
 
   Future<Either<Failure, List<QuoteModel>>> getAllLocalQuotes();
+
+  Future<Either<Failure, void>> removeQuote(String quoteId);
 }

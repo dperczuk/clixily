@@ -5,18 +5,23 @@ import 'package:clixily/features/common/presentation/components/progress_view.da
 import 'package:clixily/features/quotes/data/models/quote_model.dart';
 import 'package:clixily/features/quotes/presentation/cubit/all_local_quotes_cubit.dart';
 import 'package:clixily/features/quotes/presentation/cubit/all_local_quotes_state.dart';
+import 'package:clixily/features/quotes/presentation/cubit/remove_quote_cubit.dart';
 import 'package:clixily/features/quotes/presentation/pages/add_quote_page.dart';
 import 'package:clixily/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:swipeable_tile/swipeable_tile.dart';
 
 class AllLocalQuotesPage extends StatelessWidget {
   const AllLocalQuotesPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => getIt<AllLocalQuotesCubit>()..loadAllLocalQuotes(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (_) => getIt<AllLocalQuotesCubit>()..loadAllLocalQuotes()),
+        BlocProvider(create: (_) => getIt<RemoveQuoteCubit>()),
+      ],
       child: Builder(builder: _buildBody),
     );
   }
@@ -24,12 +29,12 @@ class AllLocalQuotesPage extends StatelessWidget {
   Widget _buildBody(BuildContext context) {
     return Scaffold(
       floatingActionButton: FabComponent(
-        callback: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (_) => AddQuotePage()),
-          );
-        },
+        callback: () => Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => AddQuotePage()),
+        ).then(
+          (_) => context.read<AllLocalQuotesCubit>()..loadAllLocalQuotes(),
+        ),
       ),
       appBar: AppBar(
         title: Text(S.of(context).allLocalQuotes),
@@ -59,12 +64,29 @@ class AllLocalQuotesPage extends StatelessWidget {
                   itemCount: quotes.length,
                   padding: const EdgeInsets.all(12),
                   itemBuilder: (BuildContext context, int index) {
-                    return Card(
+                    return SwipeableTile.card(
                       color: Colors.deepPurpleAccent,
-                      elevation: 4,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
+                      shadow: BoxShadow(
+                        color: Colors.black.withOpacity(0.35),
+                        blurRadius: 4,
+                        offset: const Offset(2, 2),
                       ),
+                      horizontalPadding: 16,
+                      verticalPadding: 8,
+                      direction: SwipeDirection.horizontal,
+                      onSwiped: (_) => context.read<RemoveQuoteCubit>().removeQuote(quotes[index].id),
+                      backgroundBuilder: (_, SwipeDirection direction, AnimationController progress) {
+                        return AnimatedBuilder(
+                          animation: progress,
+                          builder: (_, __) {
+                            return AnimatedContainer(
+                              duration: const Duration(milliseconds: 400),
+                              color: progress.value > 0.4 ? const Color(0xFFed7474) : const Color(0xFFeded98),
+                            );
+                          },
+                        );
+                      },
+                      key: UniqueKey(),
                       child: _buildCardBody(context, quotes[index]),
                     );
                   },

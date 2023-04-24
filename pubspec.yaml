@@ -28,6 +28,7 @@ dependencies:
 
   # UTILS
   uuid: ^3.0.7
+  swipeable_tile: ^2.0.0+3
 
 
 dev_dependencies:

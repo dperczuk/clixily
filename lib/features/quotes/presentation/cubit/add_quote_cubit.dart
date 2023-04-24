@@ -8,12 +8,14 @@ class AddQuoteCubit extends Cubit<AddQuoteState> {
   final AddQuoteUseCase _addQuoteUseCase;
 
   Future<void> addQuote(
+    String id,
     String content,
     String author,
     num length,
   ) async {
     emit(const AddQuoteState.inProgress());
     final result = await _addQuoteUseCase.execute(
+      id: id,
       content: content,
       author: author,
       length: length,

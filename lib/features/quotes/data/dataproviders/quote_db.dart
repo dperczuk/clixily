@@ -5,5 +5,7 @@ abstract class QuotesDatabase {
 
   Future<List<Quote>> getQuotesEntries();
 
+  Future<void> removeQuote(String quoteId);
+
   Future<void> removeAllQuotes();
 }

@@ -5,10 +5,13 @@ import 'package:clixily/features/quotes/domain/repositories/quote_repository.dar
 import 'package:clixily/features/quotes/domain/usecases/add_quote_use_case.dart';
 import 'package:clixily/features/quotes/domain/usecases/get_all_local_quotes.dart';
 import 'package:clixily/features/quotes/domain/usecases/get_quote_use_case.dart';
+import 'package:clixily/features/quotes/domain/usecases/remove_quote_use_case.dart';
 import 'package:clixily/features/quotes/presentation/cubit/add_quote_cubit.dart';
 import 'package:clixily/features/quotes/presentation/cubit/all_local_quotes_cubit.dart';
 import 'package:clixily/features/quotes/presentation/cubit/single_quote_cubit.dart';
 import 'package:get_it/get_it.dart';
+
+import 'presentation/cubit/remove_quote_cubit.dart';
 
 Future<void> setupDependencies(GetIt getIt) async {
   getIt
@@ -17,7 +20,9 @@ Future<void> setupDependencies(GetIt getIt) async {
     ..registerFactory(() => GetQuoteUseCase(getIt()))
     ..registerFactory(() => GetAllLocalQuotesUseCase(getIt()))
     ..registerFactory(() => AddQuoteUseCase(getIt()))
+    ..registerFactory(() => RemoveQuoteUseCase(getIt()))
     ..registerFactory(() => SingleQuoteCubit(getIt()))
     ..registerFactory(() => AllLocalQuotesCubit(getIt()))
+    ..registerFactory(() => RemoveQuoteCubit(getIt()))
     ..registerFactory(() => AddQuoteCubit(getIt()));
 }

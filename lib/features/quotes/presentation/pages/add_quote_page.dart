@@ -3,6 +3,7 @@ import 'package:clixily/features/quotes/presentation/cubit/add_quote_cubit.dart'
 import 'package:clixily/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:uuid/uuid.dart';
 
 final GlobalKey<FormState> _formKey = GlobalKey();
 
@@ -130,6 +131,7 @@ class _AddQuotePageState extends State<AddQuotePage> {
       onPressed: () async {
         if (_formKey.currentState != null && _formKey.currentState!.validate()) {
           await context.read<AddQuoteCubit>().addQuote(
+                const Uuid().v4(),
                 _contentTextController.text,
                 _authorTextController.text,
                 _contentTextController.text.length,
