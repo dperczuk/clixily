@@ -19,12 +19,12 @@ class FailureView extends StatelessWidget {
         children: [
           Text(
             'Ups... something went wrong',
-            style: Theme.of(context).textTheme.headline6,
+            style: Theme.of(context).textTheme.headlineSmall,
           ),
           const SizedBox(height: 12),
           Text(
             failure.getMessage(),
-            style: Theme.of(context).textTheme.bodyText1,
+            style: Theme.of(context).textTheme.bodyLarge,
             textAlign: TextAlign.center,
           ),
         ],

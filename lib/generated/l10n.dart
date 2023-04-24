@@ -18,17 +18,15 @@ class S {
   static S? _current;
 
   static S get current {
-    assert(_current != null,
-        'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
+    assert(
+        _current != null, 'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
     return _current!;
   }
 
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false)
-        ? locale.languageCode
-        : locale.toString();
+    final name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -65,6 +63,36 @@ class S {
     return Intl.message(
       'Quote Page',
       name: 'quotePage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Quote`
+  String get addQuote {
+    return Intl.message(
+      'Add Quote',
+      name: 'addQuote',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter Quote`
+  String get enterQuote {
+    return Intl.message(
+      'Enter Quote',
+      name: 'enterQuote',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter author`
+  String get enterAuthor {
+    return Intl.message(
+      'Enter author',
+      name: 'enterAuthor',
       desc: '',
       args: [],
     );
@@ -115,6 +143,56 @@ class S {
     return Intl.message(
       'Tags',
       name: 'tags',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `All Local Quotes`
+  String get allLocalQuotes {
+    return Intl.message(
+      'All Local Quotes',
+      name: 'allLocalQuotes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Local Quotes not found`
+  String get localQuotesNotFound {
+    return Intl.message(
+      'Local Quotes not found',
+      name: 'localQuotesNotFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter the quote`
+  String get pleaseEnterQuote {
+    return Intl.message(
+      'Please enter the quote',
+      name: 'pleaseEnterQuote',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter the author`
+  String get pleaseEnterAuthor {
+    return Intl.message(
+      'Please enter the author',
+      name: 'pleaseEnterAuthor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter length`
+  String get pleaseEnterLength {
+    return Intl.message(
+      'Please enter length',
+      name: 'pleaseEnterLength',
       desc: '',
       args: [],
     );

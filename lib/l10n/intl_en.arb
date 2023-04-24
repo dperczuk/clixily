@@ -2,9 +2,17 @@
   "@@locale": "en",
   "appName": "Clixily App",
   "quotePage": "Quote Page",
+  "addQuote": "Add Quote",
+  "enterQuote": "Enter Quote",
+  "enterAuthor": "Enter author",
   "getAnotherQuote": "Get another quote",
   "quote": "Quote",
   "numberOfLetters": "Number of letters",
   "author": "Author",
-  "tags": "Tags"
+  "tags": "Tags",
+  "allLocalQuotes": "All Local Quotes",
+  "localQuotesNotFound": "Local Quotes not found",
+  "pleaseEnterQuote": "Please enter the quote",
+  "pleaseEnterAuthor": "Please enter the author",
+  "pleaseEnterLength": "Please enter length"
 }

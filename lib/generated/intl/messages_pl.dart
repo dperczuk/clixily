@@ -22,11 +22,17 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "addQuote": MessageLookupByLibrary.simpleMessage("Dodaj cytat"),
+        "allLocalQuotes": MessageLookupByLibrary.simpleMessage("Wszystkie Lokalne Cytaty"),
         "appName": MessageLookupByLibrary.simpleMessage("Aplikacja Clixily"),
         "author": MessageLookupByLibrary.simpleMessage("Autor"),
-        "getAnotherQuote":
-            MessageLookupByLibrary.simpleMessage("Pobierz kolejny cytat"),
+        "enterAuthor": MessageLookupByLibrary.simpleMessage("Wprowadź autora"),
+        "enterQuote": MessageLookupByLibrary.simpleMessage("Wprowadź cytat"),
+        "getAnotherQuote": MessageLookupByLibrary.simpleMessage("Pobierz kolejny cytat"),
+        "localQuotesNotFound": MessageLookupByLibrary.simpleMessage("Lokalne cytaty nie znalezione"),
         "numberOfLetters": MessageLookupByLibrary.simpleMessage("Ilość liter"),
+        "pleaseEnterAuthor": MessageLookupByLibrary.simpleMessage("Proszę wprowadzić autora"),
+        "pleaseEnterQuote": MessageLookupByLibrary.simpleMessage("Proszę wprowadzić cytat"),
         "quote": MessageLookupByLibrary.simpleMessage("Cytat"),
         "quotePage": MessageLookupByLibrary.simpleMessage("Strona z cytatami"),
         "tags": MessageLookupByLibrary.simpleMessage("Tagi")
