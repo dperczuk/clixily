@@ -54,7 +54,7 @@ class ClixilyDatabase extends _$ClixilyDatabase implements QuotesDatabase {
 
   QuoteTableCompanion _mapQuoteToInsertCompanion(QuoteTableCompanion quote) {
     return QuoteTableCompanion.insert(
-      id: quote.id!,
+      id: quote.id,
       content: quote.content,
       author: quote.author,
       length: quote.length,
