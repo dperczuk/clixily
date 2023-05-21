@@ -5,7 +5,7 @@ This project is created in Flutter using BLoC and Provider.
 ## Screenshots of the app
 
 **Fetch quote page**
-<a href="url"><img src="https://github.com/dperczuk/clixily/blob/fix/cleanup/assets/images/screenshots/fetch_quote.png" align="left" width="556" ></a>
+<img src="https://github.com/dperczuk/clixily/blob/fix/cleanup/assets/images/screenshots/fetch_quote.png" width="556">
 
 **Add quote page**
 ![](https://github.com/dperczuk/clixily/blob/fix/cleanup/assets/images/screenshots/add_quote.png)
