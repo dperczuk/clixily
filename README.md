@@ -4,7 +4,7 @@ This project is created in Flutter using BLoC and Provider.
 
 ## Screenshots of the app
 
-![](https://github.com/dperczuk/clixily/blob/fix/cleanup/assets/images/screenshots/fetch_quote_smaller.png)
+![](https://github.com/dperczuk/clixily/blob/fix/cleanup/assets/images/screenshots/add_quote_smaller.png)
  [![Add quote page](https://i.postimg.cc/QCPH985p/add-quote.png)](https://postimg.cc/8fR1xVZ5) [![Quotes ListView page](https://i.postimg.cc/Y2XgBk42/quotes-list.png)](https://postimg.cc/MXQX1Cbg)
 
 ## Getting Started
