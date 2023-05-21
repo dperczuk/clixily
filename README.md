@@ -3,9 +3,11 @@
 This project is created in Flutter using BLoC and Provider.
 
 ## Screenshots of the app
-
+**Step 1:**
 ![](https://github.com/dperczuk/clixily/blob/fix/cleanup/assets/images/screenshots/fetch_quote_smaller.png)
+**Step 2:**
 ![](https://github.com/dperczuk/clixily/blob/fix/cleanup/assets/images/screenshots/quotes_list_smaller.png)
+**Step 3:**
 ![](https://github.com/dperczuk/clixily/blob/fix/cleanup/assets/images/screenshots/add_quote_smaller.png)
 
 ## Getting Started
