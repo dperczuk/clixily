@@ -2,6 +2,17 @@
 
 This project is created in Flutter using BLoC and Provider.
 
+## Screenshots of the app
+
+**Fetch quote page**
+![](https://github.com/dperczuk/clixily/blob/fix/cleanup/assets/images/screenshots/fetch_quote.png)
+
+**Add quote page**
+![](https://github.com/dperczuk/clixily/blob/fix/cleanup/assets/images/screenshots/add_quote.png)
+
+**Quotes ListView page**
+![](https://github.com/dperczuk/clixily/blob/fix/cleanup/assets/images/screenshots/quotes_list.png)
+
 ## Getting Started
 
 Requirements:
