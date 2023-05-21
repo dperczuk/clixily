@@ -4,9 +4,7 @@ This project is created in Flutter using BLoC and Provider.
 
 ## Screenshots of the app
 
-[![Fetch quote page](https://i.postimg.cc/rFr62Vh5/fetch-quote.png)](https://postimg.cc/ppRcDHMd) [![Add quote page](https://i.postimg.cc/QCPH985p/add-quote.png)](https://postimg.cc/8fR1xVZ5)
-
-[![Quotes ListView page](https://i.postimg.cc/Y2XgBk42/quotes-list.png)](https://postimg.cc/MXQX1Cbg)
+[![Fetch quote page](https://i.postimg.cc/rFr62Vh5/fetch-quote.png)](https://postimg.cc/ppRcDHMd) [![Add quote page](https://i.postimg.cc/QCPH985p/add-quote.png)](https://postimg.cc/8fR1xVZ5) [![Quotes ListView page](https://i.postimg.cc/Y2XgBk42/quotes-list.png)](https://postimg.cc/MXQX1Cbg)
 
 ## Getting Started
 
