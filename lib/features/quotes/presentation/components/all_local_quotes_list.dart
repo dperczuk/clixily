@@ -14,10 +14,6 @@ class AllLocalQuotesList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return _buildAllLocalQuotesList(context);
-  }
-
-  Widget _buildAllLocalQuotesList(BuildContext context) {
     return BlocBuilder<AllLocalQuotesCubit, AllLocalQuotesState>(
       builder: (context, AllLocalQuotesState state) {
         return state.maybeWhen(

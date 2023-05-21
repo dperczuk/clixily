@@ -2,6 +2,7 @@ import 'package:clixily/core/dependency_injection/domain/dependencies_container.
 import 'package:clixily/features/common/presentation/components/failure_view.dart';
 import 'package:clixily/features/common/presentation/components/progress_view.dart';
 import 'package:clixily/features/quotes/data/models/quote_model.dart';
+import 'package:clixily/features/quotes/presentation/components/get_another_quote_button.dart';
 import 'package:clixily/features/quotes/presentation/cubit/single_quote_cubit.dart';
 import 'package:clixily/features/quotes/presentation/cubit/single_quote_state.dart';
 import 'package:clixily/generated/l10n.dart';
@@ -36,18 +37,21 @@ class GetQuotePage extends StatelessWidget {
 
   Widget _buildQuoteComponent(BuildContext context) {
     return SizedBox(
-      height: 200,
+      height: 250,
       child: BlocBuilder<SingleQuoteCubit, SingleQuoteState<QuoteModel>>(
         builder: (context, SingleQuoteState<QuoteModel> state) {
           return state.maybeWhen(
             loaded: (QuoteModel quote) {
-              return Card(
-                color: Colors.deepPurpleAccent,
-                elevation: 4,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
+              return SizedBox(
+                height: 200,
+                child: Card(
+                  color: Colors.deepPurpleAccent,
+                  elevation: 4,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: _buildCardBody(context, quote),
                 ),
-                child: _buildCardBody(context, quote),
               );
             },
             inProgress: () => const ProgressView(),
@@ -112,26 +116,14 @@ class GetQuotePage extends StatelessWidget {
   }
 
   Widget _buildGetAnotherQuoteButton(BuildContext context) {
-    return ElevatedButton(
-      child: Text(
-        S.of(context).getAnotherQuote.toUpperCase(),
-        style: TextStyle(color: Colors.deepPurpleAccent, fontSize: 16),
-      ),
-      style: ButtonStyle(
-        padding: MaterialStateProperty.all(
-          const EdgeInsets.all(16),
-        ),
-        backgroundColor: MaterialStateProperty.all<Color>(
-          Colors.white,
-        ),
-        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-          RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(22),
-            side: BorderSide(color: Colors.deepPurpleAccent),
-          ),
-        ),
-      ),
-      onPressed: () => context.read<SingleQuoteCubit>().loadQuote(),
+    return BlocBuilder<SingleQuoteCubit, SingleQuoteState<QuoteModel>>(
+      builder: (context, SingleQuoteState<QuoteModel> state) {
+        return state.maybeWhen(
+          loaded: (QuoteModel quote) => const GetAnotherQuoteButton(),
+          inProgress: () => const ProgressView(),
+          orElse: () => const SizedBox.shrink(),
+        );
+      },
     );
   }
 }
