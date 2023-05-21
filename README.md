@@ -8,10 +8,10 @@ This project is created in Flutter using BLoC and Provider.
 [![Fetch quote page](https://i.postimg.cc/rFr62Vh5/fetch-quote.png)](https://postimg.cc/ppRcDHMd)
 
 **Add quote page**
-![](https://github.com/dperczuk/clixily/blob/fix/cleanup/assets/images/screenshots/add_quote.png)
+[![Add quote page](https://i.postimg.cc/QCPH985p/add-quote.png)](https://postimg.cc/8fR1xVZ5)
 
 **Quotes ListView page**
-![](https://github.com/dperczuk/clixily/blob/fix/cleanup/assets/images/screenshots/quotes_list.png)
+[![Quotes ListView page](https://i.postimg.cc/Y2XgBk42/quotes-list.png)](https://postimg.cc/MXQX1Cbg)
 
 ## Getting Started
 
