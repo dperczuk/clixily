@@ -4,7 +4,7 @@ This project is created in Flutter using BLoC and Provider.
 
 ## Screenshots of the app
 
-**Fetch quote page**
+[Fetch quote page]
 [![Fetch quote page](https://i.postimg.cc/rFr62Vh5/fetch-quote.png)](https://postimg.cc/ppRcDHMd)
 
 **Add quote page**
